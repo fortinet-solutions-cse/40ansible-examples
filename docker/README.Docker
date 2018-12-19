@@ -2,13 +2,13 @@
 
 
 #Docekr test/dev 
-docker build  -t 40ansible .
+docker build  -t 40ansible-playbook .
 
 #Run
-docker run -i -t 40ansible /bin/bash
+docker run -i -t 40ansible-playbook
 
 #To mount a local directory for playbook dev/test :
-docker run -v /Users/thomas/src/40ansible/:/40ansible --rm -i -t 40ansible /bin/bash
+docker run -v ./examples:/playbooks --rm -i -t 40ansible-playbook <name of the playbook>
 
 #Debugging API calls on your fortigate:
 diag debug application httpsd 255
