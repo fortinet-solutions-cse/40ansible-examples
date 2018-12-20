@@ -7,11 +7,6 @@
    password: ""
    vdom: "root"
   tasks:
-# If you manage python pip externaly you don't need that version is
-# here to ensure update/downgrade if needed (optional)
-  - pip: 
-     name: fortiosapi
-     version: 0.9.6
   - name: Set static route on the fortigate
     fortiosconfig:
      action: "set"

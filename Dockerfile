@@ -10,7 +10,7 @@ MAINTAINER Nicolas Thomas <nthomas@fortinet.com>
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade && apt-get -y install bash python-pip ansible sudo
 RUN apt clean
-
+RUN pip install fortiosapi
 RUN groupadd -r ubuntu && useradd  -g ubuntu -G adm,sudo ubuntu -m -p fortinet -s /bin/bash && \
     echo "ubuntu ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/99-nopasswd && chmod 640 /etc/sudoers.d/99-nopasswd
 USER ubuntu

@@ -16,3 +16,12 @@ Adapt the IP of the Fortigate in fortigate_mix.yml to your environment
 `ansible-playbook fortigate_mix.yml`
 
 You can then write your own playbooks and use inventory.
+
+# PyPi 
+If you manage python pip externaly you don't need that version is
+here to ensure update/downgrade if needed (optional)
+```yaml
+  - pip: 
+     name: fortiosapi
+     version: 0.9.6
+```
