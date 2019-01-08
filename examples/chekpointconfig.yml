@@ -1,0 +1,19 @@
+- hosts: localhost
+#  strategy: debug
+  vars:
+#   host: "192.168.122.70"
+   host:  "192.168.115.128"
+   username: "admin"
+   password: ""
+  tasks:
+  - name: create a revision
+    fortiosconfig:
+     action: "post"
+     host:  "{{  host }}"  
+     username: "{{  username}}"  
+     password: "{{ password }}"
+     config: "system config-revision"
+     mkey: 'save'
+#     vdom: "global"
+#     config_parameters:
+ #      comments: "checkpointed by Ansible"
